@@ -34,5 +34,3 @@ RUN usermod -u 1000 www-data
 ENV npm_config_cache=/tmp/.npm
 
 CMD ["supervisord"]
-
-USER www-data
