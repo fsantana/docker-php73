@@ -29,4 +29,10 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+RUN usermod -u 1000 www-data
+
+ENV npm_config_cache=/tmp/.npm
+
 CMD ["supervisord"]
+
+USER www-data
